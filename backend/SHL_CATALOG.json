@@ -1,0 +1,291 @@
+[
+    {
+        "name": "SHL Java Developer Assessment",
+        "tags": "java backend spring api collaboration",
+        "url": "https://www.shl.com/solutions/products/productcatalog/view/java-8-new/",
+        "duration_min": 40,
+        "type": "Technical",
+        "remote_testing": true,
+        "adaptive": true
+    },
+    {
+        "name": "SHL Graduate Talent Screener",
+        "tags": "graduates freshers reasoning aptitude personality",
+        "url": "https://www.shl.com/en/assessments/graduate/",
+        "duration_min": 60,
+        "type": "Aptitude",
+        "remote_testing": true,
+        "adaptive": false
+    },
+    {
+        "name": "SHL Sales Skills Assessment",
+        "tags": "sales communication persuasion negotiation crm b2b",
+        "url": "https://www.shl.com/en/assessments/sales/",
+        "duration_min": 60,
+        "type": "Soft Skills",
+        "remote_testing": true,
+        "adaptive": false
+    },
+    {
+        "name": "SHL COO Leadership Assessment",
+        "tags": "leadership operations strategy management culture diversity",
+        "url": "https://www.shl.com/en/assessments/leadership/",
+        "duration_min": 60,
+        "type": "Leadership",
+        "remote_testing": true,
+        "adaptive": false
+    },
+    {
+        "name": "SHL Content Writing and SEO Assessment",
+        "tags": "content seo writing grammar blog copywriting",
+        "url": "https://www.shl.com/en/assessments/language/",
+        "duration_min": 60,
+        "type": "Soft Skills",
+        "remote_testing": true,
+        "adaptive": false
+    },
+    {
+        "name": "SHL Data Science Assessment",
+        "tags": "data python statistics machine learning ai",
+        "url": "https://www.shl.com/en/assessments/data-science/",
+        "duration_min": 60,
+        "type": "Technical",
+        "remote_testing": true,
+        "adaptive": true
+    },
+    {
+        "name": "SHL Full Stack Developer Assessment",
+        "tags": "full stack javascript react node.js angular sql python",
+        "url": "https://www.shl.com/en/assessments/full-stack-developer/",
+        "duration_min": 90,
+        "type": "Technical",
+        "remote_testing": true,
+        "adaptive": true
+    },
+    {
+        "name": "SHL AI Researcher Assessment",
+        "tags": "ai machine learning deep learning tensorflow pytorch research",
+        "url": "https://www.shl.com/en/assessments/ai-researcher/",
+        "duration_min": 60,
+        "type": "Technical",
+        "remote_testing": true,
+        "adaptive": true
+    },
+    {
+        "name": "SHL Python Developer Assessment",
+        "tags": "python django flask automation machine learning",
+        "url": "https://www.shl.com/en/assessments/python-developer/",
+        "duration_min": 60,
+        "type": "Technical",
+        "remote_testing": true,
+        "adaptive": false
+    },
+    {
+        "name": "SHL Data Associate Assessment",
+        "tags": "data analysis reporting excel sql data management",
+        "url": "https://www.shl.com/en/assessments/data-associate/",
+        "duration_min": 54,
+        "type": "Technical",
+        "remote_testing": true,
+        "adaptive": false
+    },
+    {
+        "name": "SHL Digital Marketing Assessment",
+        "tags": "digital marketing seo ads analytics social media email marketing",
+        "url": "https://www.shl.com/en/assessments/digital-marketing/",
+        "duration_min": 60,
+        "type": "Soft Skills",
+        "remote_testing": true,
+        "adaptive": false
+    },
+    {
+        "name": "SHL DevOps Engineer Assessment",
+        "tags": "devops cloud infrastructure automation scripting linux kubernetes",
+        "url": "https://www.shl.com/en/assessments/devops/",
+        "duration_min": 75,
+        "type": "Technical",
+        "remote_testing": true,
+        "adaptive": true
+    },
+    {
+        "name": "SHL Network Engineer Assessment",
+        "tags": "networking ccna routing switching vpn firewall",
+        "url": "https://www.shl.com/en/assessments/network-engineer/",
+        "duration_min": 60,
+        "type": "Technical",
+        "remote_testing": true,
+        "adaptive": false
+    },
+    {
+        "name": "SHL Product Manager Assessment",
+        "tags": "product management agile scrum leadership planning strategy",
+        "url": "https://www.shl.com/en/assessments/product-manager/",
+        "duration_min": 90,
+        "type": "Leadership",
+        "remote_testing": true,
+        "adaptive": true
+    },
+    {
+        "name": "SHL HR Manager Assessment",
+        "tags": "hr human resources management recruitment employee relations",
+        "url": "https://www.shl.com/en/assessments/hr-manager/",
+        "duration_min": 60,
+        "type": "Leadership",
+        "remote_testing": true,
+        "adaptive": false
+    },
+    {
+        "name": "SHL Marketing Analyst Assessment",
+        "tags": "marketing analysis data reporting market trends campaign",
+        "url": "https://www.shl.com/en/assessments/marketing-analyst/",
+        "duration_min": 60,
+        "type": "Technical",
+        "remote_testing": true,
+        "adaptive": false
+    },
+    {
+        "name": "SHL UX/UI Designer Assessment",
+        "tags": "ux ui design wireframes prototyping user research",
+        "url": "https://www.shl.com/en/assessments/ux-ui-designer/",
+        "duration_min": 60,
+        "type": "Soft Skills",
+        "remote_testing": true,
+        "adaptive": true
+    },
+    {
+        "name": "SHL Financial Analyst Assessment",
+        "tags": "finance analysis accounting excel reporting budgeting forecasting",
+        "url": "https://www.shl.com/en/assessments/financial-analyst/",
+        "duration_min": 60,
+        "type": "Technical",
+        "remote_testing": true,
+        "adaptive": false
+    },
+    {
+        "name": "SHL Customer Support Specialist Assessment",
+        "tags": "customer support communication problem solving technical support",
+        "url": "https://www.shl.com/en/assessments/customer-support/",
+        "duration_min": 45,
+        "type": "Soft Skills",
+        "remote_testing": true,
+        "adaptive": false
+    },
+    {
+        "name": "SHL Cybersecurity Analyst Assessment",
+        "tags": "cybersecurity networking firewalls penetration testing encryption",
+        "url": "https://www.shl.com/en/assessments/cybersecurity-analyst/",
+        "duration_min": 60,
+        "type": "Technical",
+        "remote_testing": true,
+        "adaptive": true
+    },
+    {
+        "name": "SHL Scrum Master Assessment",
+        "tags": "scrum agile project management leadership coaching",
+        "url": "https://www.shl.com/en/assessments/scrum-master/",
+        "duration_min": 60,
+        "type": "Leadership",
+        "remote_testing": true,
+        "adaptive": false
+    },
+    {
+        "name": "SHL IT Support Specialist Assessment",
+        "tags": "it support troubleshooting hardware software networking customer service",
+        "url": "https://www.shl.com/en/assessments/it-support-specialist/",
+        "duration_min": 60,
+        "type": "Technical",
+        "remote_testing": true,
+        "adaptive": false
+    },
+    {
+        "name": "SHL Research Analyst Assessment",
+        "tags": "research analysis data collection reporting business intelligence",
+        "url": "https://www.shl.com/en/assessments/research-analyst/",
+        "duration_min": 60,
+        "type": "Technical",
+        "remote_testing": true,
+        "adaptive": true
+    },
+    {
+        "name": "SHL Blockchain Developer Assessment",
+        "tags": "blockchain ethereum smart contracts solidity crypto web3",
+        "url": "https://www.shl.com/en/assessments/blockchain-developer/",
+        "duration_min": 75,
+        "type": "Technical",
+        "remote_testing": true,
+        "adaptive": true
+    },
+    {
+        "name": "SHL Data Visualization Specialist Assessment",
+        "tags": "data visualization reporting tableau powerbi excel charts",
+        "url": "https://www.shl.com/en/assessments/data-visualization-specialist/",
+        "duration_min": 60,
+        "type": "Technical",
+        "remote_testing": true,
+        "adaptive": false
+    },
+    {
+        "name": "SHL Cloud Architect Assessment",
+        "tags": "cloud architecture aws azure google cloud kubernetes",
+        "url": "https://www.shl.com/en/assessments/cloud-architect/",
+        "duration_min": 80,
+        "type": "Technical",
+        "remote_testing": true,
+        "adaptive": true
+    },
+    {
+        "name": "SHL Business Analyst Assessment",
+        "tags": "business analysis requirements gathering process mapping reporting",
+        "url": "https://www.shl.com/en/assessments/business-analyst/",
+        "duration_min": 75,
+        "type": "Technical",
+        "remote_testing": true,
+        "adaptive": false
+    },
+    {
+        "name": "SHL QA Engineer Assessment",
+        "tags": "qa testing automation selenium manual testing jira bug tracking",
+        "url": "https://www.shl.com/en/assessments/qa-engineer/",
+        "duration_min": 60,
+        "type": "Technical",
+        "remote_testing": true,
+        "adaptive": false
+    },
+    {
+        "name": "SHL Marketing Manager Assessment",
+        "tags": "marketing management campaign strategy customer segmentation market research",
+        "url": "https://www.shl.com/en/assessments/marketing-manager/",
+        "duration_min": 90,
+        "type": "Leadership",
+        "remote_testing": true,
+        "adaptive": true
+    },
+	{
+		"name": "SHL COO Leadership Assessment",
+		"tags": "leadership operations strategy management culture diversity fit executive",
+		"url": "https://www.shl.com/en/assessments/leadership/",
+		"duration_min": 60,
+		"type": "Leadership",
+		"remote_testing": true,
+		"adaptive": false
+	},
+	{
+		"name": "SHL Graduate Sales Aptitude Assessment",
+		"tags": "graduates freshers sales communication persuasion negotiation aptitude",
+		"url": "https://www.shl.com/en/assessments/graduate-sales/",
+		"duration_min": 60,
+		"type": "Aptitude",
+		"remote_testing": true,
+		"adaptive": false
+	},
+
+	{
+		"name": "SHL Culture Fit Assessment",
+		"tags": "culture fit values personality leadership team organizational",
+		"url": "https://www.shl.com/en/assessments/culture-fit/",
+		"duration_min": 60,
+		"type": "Behavioral",
+		"remote_testing": true,
+		"adaptive": false
+	}
+]

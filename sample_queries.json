@@ -1,0 +1,51 @@
+[
+    {
+        "query": "I am hiring for Java developers who can also collaborate effectively with my business teams. Looking for an assessment(s) that can be completed in 40 minutes.",
+        "expected_assessments": [
+            "SHL Java Developer Assessment"
+        ]
+    },
+    {
+        "query": "I want to hire new graduates for a sales role in my company, the budget is for about an hour for each test. Give me some options.",
+        "expected_assessments": [
+            "SHL Graduate Talent Screener",
+            "SHL Sales Skills Assessment"
+        ]
+    },
+    {
+        "query": "I am looking for a COO for my company in China and I want to see if they are culturally a right fit for our company. Suggest me an assessment that they can complete in about an hour.",
+        "expected_assessments": [
+            "SHL COO Leadership Assessment"
+        ]
+    },
+    {
+        "query": "Content Writer required, expert in English and SEO.",
+        "expected_assessments": [
+            "SHL Content Writing and SEO Assessment"
+        ]
+    },
+    {
+        "query": "Looking for a python developer with internship experience.",
+        "expected_assessments": [
+            "SHL Python Developer Assessment"
+        ]
+    },
+    {
+        "query": "AI researcher intern.",
+        "expected_assessments": [
+            "SHL AI Researcher Assessment"
+        ]
+    },
+    {
+        "query": "Full stack developer.",
+        "expected_assessments": [
+            "SHL Full Stack Developer Assessment"
+        ]
+    },
+    {
+        "query": "Data Associate, the test duration should be 54 minutes.",
+        "expected_assessments": [
+            "SHL Data Associate Assessment"
+        ]
+    }
+]
