@@ -7,6 +7,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 from backend.metrics.metrics import recall_at_k, mean_average_precision_at_k
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import HTMLResponse
 import uvicorn
 
 # Initialize FastAPI app
@@ -64,6 +65,14 @@ def infer_job_role(original_text):
         if any(keyword in text for keyword in keywords):
             return role
     return "unknown"
+
+# Root path to show welcome message
+@app.get("/", response_class=HTMLResponse)
+async def root():
+    return """
+    <h2>🚀 SHL Assessment Recommendation Engine</h2>
+    <p>Use <a href="/docs">/docs</a> to explore the API.</p>
+    """
 
 # Route to handle job description and return recommendations
 @app.post("/recommendations")
