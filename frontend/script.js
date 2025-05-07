@@ -1,4 +1,5 @@
-fetch("https://shl-recommendation-engine-3bbj.onrender.com/recommendations", {
+fetch("https://shl-recommendation-engine-1-u54o.onrender.com/recommendations", {
+	
     method: "POST",
     mode: 'cors', // Explicitly enable CORS
     headers: {
