@@ -1,5 +1,6 @@
 fastapi
 uvicorn
+gunicorn
 scikit-learn
 spacy
 tabulate
