@@ -1,5 +1,6 @@
 fetch("https://shl-recommendation-engine-3bbj.onrender.com/recommendations", {
     method: "POST",
+    mode: 'cors', // Explicitly enable CORS
     headers: {
         "Content-Type": "application/json",
     },

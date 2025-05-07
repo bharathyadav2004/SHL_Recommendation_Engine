@@ -13,23 +13,23 @@ import uvicorn
 # Initialize FastAPI app
 app = FastAPI()
 
-# CORS middleware to allow requests from any origin
+# Enable CORS for all origins
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["https://shl-frontend-production-5e65.up.railway.app"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-# Load the spaCy model for text processing
+# Load spaCy NLP model
 nlp = spacy.load("en_core_web_sm")
 
 # Load SHL catalog data
 with open("backend/SHL_CATALOG.json") as file:
     SHL_CATALOG = json.load(file)
 
-# Relevant items map for various job roles
+# Mapping job roles to relevant SHL catalog indices
 RELEVANT_ITEMS_MAP = {
     "java_developer": {0, 6, 5},
     "sales": {2, 4, 7},
@@ -39,19 +39,18 @@ RELEVANT_ITEMS_MAP = {
     "graduate_sales": {2, 7, 10},
 }
 
-# Request model for Job Description
+# Pydantic model for API input
 class JobDescriptionRequest(BaseModel):
     jd_text: str
 
-# Preprocessing function to lemmatize and remove stop words and punctuation
+# Text preprocessing function
 def preprocess_text(text):
     doc = nlp(text.lower())
     return " ".join([token.lemma_ for token in doc if not token.is_stop and not token.is_punct])
 
-# Function to infer job role from the job description text
-def infer_job_role(original_text):
-    text = original_text.lower()
-
+# Infer job role from JD
+def infer_job_role(text):
+    text = text.lower()
     job_roles_keywords = {
         "java_developer": ["java", "developer", "backend", "spring", "hibernate"],
         "sales": ["sales", "marketing", "client", "business development", "lead"],
@@ -60,13 +59,11 @@ def infer_job_role(original_text):
         "content_writer": ["content", "writing", "editor", "copywriter", "creative"],
         "data_associate": ["data", "analyst", "python", "statistics", "data science"],
     }
-
     for role, keywords in job_roles_keywords.items():
         if any(keyword in text for keyword in keywords):
             return role
     return "unknown"
 
-# Root path to show welcome message
 @app.get("/", response_class=HTMLResponse)
 async def root():
     return """
@@ -74,45 +71,54 @@ async def root():
     <p>Use <a href="/docs">/docs</a> to explore the API.</p>
     """
 
-# Route to handle job description and return recommendations
 @app.post("/recommendations")
 def get_recommendations(request: JobDescriptionRequest):
-    job_role = infer_job_role(request.jd_text)
+    jd_original = request.jd_text.strip()
+    print("Received request:", jd_original) 
+    if not jd_original:
+        raise HTTPException(status_code=400, detail="Job description is empty.")
+
+    job_role = infer_job_role(jd_original)
 
     if job_role not in RELEVANT_ITEMS_MAP:
-        raise HTTPException(status_code=400, detail="Unable to infer job role from the description")
+        raise HTTPException(status_code=400, detail="Unable to infer job role from the description.")
 
-    # Preprocess the job description text
-    jd_text_processed = preprocess_text(request.jd_text)
+    # Preprocess JD
+    jd_text_processed = preprocess_text(jd_original)
+    if not jd_text_processed:
+        raise HTTPException(status_code=400, detail="Job description has no meaningful content after preprocessing.")
 
-    # Retrieve relevant items for the inferred job role
     relevant_items = RELEVANT_ITEMS_MAP[job_role]
     recommendations = []
 
-    # Prepare catalog descriptions
-    catalog_descriptions = [assessment.get('tags', '') for assessment in SHL_CATALOG]
+    # Prepare catalog tags (fallback if empty)
+    catalog_descriptions = [
+        preprocess_text(item.get('tags', '') or "placeholder") for item in SHL_CATALOG
+    ]
 
-    # Perform TF-IDF vectorization and cosine similarity calculation
-    vectorizer = TfidfVectorizer()
+    # Combine JD with catalog
     corpus = [jd_text_processed] + catalog_descriptions
-    vectors = vectorizer.fit_transform(corpus)
 
-    # Calculate cosine similarities between job description and catalog descriptions
+    # TF-IDF vectorization
+    vectorizer = TfidfVectorizer()
+    try:
+        vectors = vectorizer.fit_transform(corpus)
+    except ValueError:
+        raise HTTPException(status_code=500, detail="Failed to generate vector due to empty vocabulary.")
+
+    # Cosine similarity
     cosine_similarities = cosine_similarity(vectors[0:1], vectors[1:]).flatten()
 
-    # Attach relevance scores to catalog items
     for i, score in enumerate(cosine_similarities):
         SHL_CATALOG[i]['relevance_score'] = float(score)
         recommendations.append(SHL_CATALOG[i])
 
-    # Sort recommendations based on relevance score
     recommendations = sorted(recommendations, key=lambda x: x['relevance_score'], reverse=True)
 
-    # Set the top-k recommendations
     k = 5
-    recommended_indices = list(range(len(recommendations)))
+    recommended_indices = [SHL_CATALOG.index(rec) for rec in recommendations[:k]]
 
-    # Calculate evaluation metrics
+    # Evaluation metrics
     recall = recall_at_k(recommended_indices, relevant_items, k)
     mapk = mean_average_precision_at_k(recommended_indices, relevant_items, k)
 
@@ -124,7 +130,7 @@ def get_recommendations(request: JobDescriptionRequest):
         }
     }
 
-# Entry point for running the app with dynamic port binding
+# Run the app
 if __name__ == "__main__":
-    port = int(os.getenv("PORT", 8000))  # Default to 8000 if PORT is not set
+    port = int(os.getenv("PORT", 8000))
     uvicorn.run(app, host="0.0.0.0", port=port)
