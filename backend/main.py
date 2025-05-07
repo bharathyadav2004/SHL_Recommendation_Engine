@@ -16,7 +16,7 @@ app = FastAPI()
 # Enable CORS for all origins
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://shl-frontend-production-5e65.up.railway.app"],
+    allow_origins=["https://celebrated-malabi-83bb5f.netlify.app/"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
